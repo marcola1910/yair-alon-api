@@ -11,11 +11,24 @@ public class AspectsDTO {
 
     private String Aspect;
 
-    public AspectsDTO(String planet1, String planet2, String aspect) {
+    private int house;
+
+    public int getHouse() {
+        return house;
+    }
+
+    public void setHouse(int house) {
+        this.house = house;
+    }
+
+
+
+    public AspectsDTO(String planet1, String planet2, String aspect, int house) {
         this.id = UUID.randomUUID().toString();
         this.planetName1 = planet1;
         this.planetName2 = planet2;
         this.Aspect = aspect;
+        this.house = house;
     }
 
     public String getAspect() {

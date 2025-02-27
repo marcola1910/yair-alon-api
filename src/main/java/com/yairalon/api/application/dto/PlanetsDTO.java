@@ -10,7 +10,17 @@ public class PlanetsDTO {
     private String zodiacSign;
     private int house;
 
-    public PlanetsDTO(String planetName, double planetLongitude, String zodiacSign, int house) {
+    public boolean isRetrograde() {
+        return retrograde;
+    }
+
+    public void setRetrograde(boolean retrograde) {
+        this.retrograde = retrograde;
+    }
+
+    private boolean retrograde;
+
+    public PlanetsDTO(String planetName, double planetLongitude, String zodiacSign, int house, boolean retrograde) {
         this.planetName = planetName;
         this.id = UUID.randomUUID().toString();
         this.planetName = planetName;
