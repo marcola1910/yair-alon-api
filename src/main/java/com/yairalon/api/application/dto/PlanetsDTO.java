@@ -4,11 +4,23 @@ import java.util.UUID;
 
 public class PlanetsDTO {
 
+
     private String id;
     private String planetName;
     private double planetLongitude;
     private String zodiacSign;
     private int house;
+    private double cupangle;
+
+    public PlanetsDTO() {}
+
+    public double getCupangle() {
+        return cupangle;
+    }
+
+    public void setPlanetLongitude(double planetLongitude) {
+        this.planetLongitude = planetLongitude;
+    }
 
     public boolean isRetrograde() {
         return retrograde;
@@ -20,13 +32,14 @@ public class PlanetsDTO {
 
     private boolean retrograde;
 
-    public PlanetsDTO(String planetName, double planetLongitude, String zodiacSign, int house, boolean retrograde) {
+    public PlanetsDTO(String planetName, double planetLongitude, String zodiacSign, int house, boolean retrograde, double cuspangle) {
         this.planetName = planetName;
         this.id = UUID.randomUUID().toString();
         this.planetName = planetName;
         this.planetLongitude = planetLongitude;
         this.zodiacSign = zodiacSign;
         this.house = house;
+        this.cupangle = cuspangle;
     }
 
     public String getZodiacSign() {
@@ -55,10 +68,6 @@ public class PlanetsDTO {
 
     public double getPlanetLongitude() {
         return planetLongitude;
-    }
-
-    public void setPlanetLongitude(long planetLongitude) {
-        this.planetLongitude = planetLongitude;
     }
 
     public int getHouse() {

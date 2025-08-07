@@ -1,28 +1,16 @@
-
-
 package com.yairalon.api.interfaces.rest;
-
 
 import com.yairalon.api.application.dto.BirthChartRequestDTO;
 import com.yairalon.api.application.dto.TransitCalculationRequestDTO;
 import com.yairalon.api.application.service.EphemerisService;
 import com.yairalon.api.application.service.factories.EphemeridesFactory;
 import io.smallrye.mutiny.Uni;
+import jakarta.annotation.security.PermitAll;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
-import swisseph.DblObj;
-import swisseph.SweConst;
-import swisseph.SweDate;
-import swisseph.SwissEph;
 
-
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
-
-
+@PermitAll
 @Path("/ephemeris")
 public class Ephemeris {
 

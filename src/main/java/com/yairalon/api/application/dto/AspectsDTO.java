@@ -1,9 +1,13 @@
 package com.yairalon.api.application.dto;
 
+import java.time.LocalDateTime;
 import java.util.UUID;
 
 public class AspectsDTO {
+
     private String id;
+
+    private double longitude;
 
     private String planetName1;
 
@@ -12,6 +16,29 @@ public class AspectsDTO {
     private String Aspect;
 
     private int house;
+
+    public AspectsDTO(){
+
+    }
+    private LocalDateTime startDate;
+
+    public LocalDateTime getStartDate() {
+        return startDate;
+    }
+
+    public void setStartDate(LocalDateTime startDate) {
+        this.startDate = startDate;
+    }
+
+    public LocalDateTime getEndDate() {
+        return endDate;
+    }
+
+    public void setEndDate(LocalDateTime endDate) {
+        this.endDate = endDate;
+    }
+
+    private LocalDateTime endDate;
 
     public int getHouse() {
         return house;
@@ -23,12 +50,13 @@ public class AspectsDTO {
 
 
 
-    public AspectsDTO(String planet1, String planet2, String aspect, int house) {
+    public AspectsDTO(String planet1, String planet2, String aspect, int house , double longitude) {
         this.id = UUID.randomUUID().toString();
         this.planetName1 = planet1;
         this.planetName2 = planet2;
         this.Aspect = aspect;
         this.house = house;
+        this.longitude = longitude;
     }
 
     public String getAspect() {
@@ -64,5 +92,7 @@ public class AspectsDTO {
         this.id = id;
     }
 
-
+    public double getLongitude() {
+        return longitude;
+    }
 }
